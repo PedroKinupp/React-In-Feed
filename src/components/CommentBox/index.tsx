@@ -1,29 +1,37 @@
 import styles from './styles.module.css'
 import CommentButton from '../CommentButton/index.tsx'
+interface CommentBoxProps{
+    image: string;
+    name: string;
+    occupation: string;
+    time: number;
+    text1: string;
+    text2: string;
+    text3: string;
+}
 
-export default function CommentBox(){
+export default function CommentBox(props: CommentBoxProps){
     return(
         <div className={styles.container}>
             <div>
-                <div>
+                <div className={styles.profile}>
                     <figure>
-                        <image/>
+                        <img src={props.image} className={styles.profileimage}></img>
                     </figure>
                     <div className={styles.details}>
-                        <h2>Thaís Gomes</h2>
-                        <h3>designer</h3>
+                        <h2>{props.name}</h2>
+                        <h3>{props.occupation}</h3>
                     </div>
                 </div>
-                <h3>Publicado há 1h</h3>
+                <h3>Publicado há {props.time}h</h3>
             </div>
             <section className={styles.info}>
-                <p>Lorem ipsum</p>
-                <p>dolor sit amet. Ex laboriosam dolorem non tempore earum et voluptatem suscipit ut cupiditate nisi est odit voluptates. Nam magni amet ut ipsam molestiae aut facilis minus et quia reiciendis sed excepturi rerum ex consequatur minima! Ex rerum sunt et incidunt officia et veritatis deserunt. Sit soluta laboriosam et incidunt sequi et eius fugiat est temporibus similique rem illum natus sit unde eveniet. 
-                </p>
-                <p>Non quos omnis ut autem labore nam vero consequatur est porro similique ad adipisci quisquam!</p>
+                <p>{props.text1}</p>
+                <p>{props.text2}</p>
+                <p>{props.text3}</p>
             </section>
-            <form>
-                <h3>Deixe seu Feedback</h3>
+            <form className={styles.forms}>
+                <h4>Deixe seu Feedback</h4>
                 <textarea className={styles.textarea}></textarea>
                 <CommentButton/>
             </form>
