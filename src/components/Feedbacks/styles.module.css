@@ -1,0 +1,58 @@
+.feedbacks{
+    margin: 0;
+    padding: 0;
+}
+
+.feedbacks figure{
+    height: 85px;
+    width: 85px;
+    margin: 0;
+    background-image: url("../../assets/foto_perfil.png");
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+}
+
+.feedbacks div{
+    flex-direction: column;
+}
+
+.content{
+    width: 580px;
+    background-color: rgb(21, 21, 46);
+    padding: 11px 20px 20px;
+    border-radius: 8px;
+    align-items: flex-start;
+    gap:29px;
+}
+
+.content div{
+    align-items: flex-start;
+    gap: 5px;
+}
+
+.content div h2{
+    font-family: Inter;
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 14px;
+    margin: 0;
+}
+
+.content div h3{
+    font-family: Inter;
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 14px;
+    color: #999999;
+}
+
+.content p{
+    font-family: Inter;
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 14px;
+    margin: 0;
+    color: #FFFFFF;
+}
