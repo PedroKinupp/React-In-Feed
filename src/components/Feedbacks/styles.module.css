@@ -14,8 +14,9 @@
     border-radius: 50%;
 }
 
-.feedbacks div{
+.container{
     flex-direction: column;
+    gap: 10px;
 }
 
 .content{
@@ -23,7 +24,8 @@
     background-color: rgb(21, 21, 46);
     padding: 11px 20px 20px;
     border-radius: 8px;
-    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
     gap:29px;
 }
 
@@ -55,4 +57,24 @@
     font-size: 14px;
     margin: 0;
     color: #FFFFFF;
+}
+
+.like{
+    display: flex;
+    justify-content: flex-start !important;
+    gap: 10px;
+}
+
+.like img{
+    height: 15px;
+    width: 15px;
+}
+
+.like p{
+    font-family: Inter;
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 14px;
+    color: #DDDDDD;
+    margin: 0;
 }
