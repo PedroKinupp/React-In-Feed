@@ -1,11 +1,12 @@
 import styles from './styles.module.css'
+import like from "../../assets/like.png"
 
 export default function Feedbacks(){
     return(
         <div className={styles.feedbacks}>
             <figure>
             </figure>
-            <div>
+            <div className={styles.container}>
                 <div className={styles.content}>
                     <div>
                         <h2>Felyppe Nunes</h2>
@@ -14,8 +15,8 @@ export default function Feedbacks(){
                     <p>texto texto texto texto</p>
                 </div>
                 <div className={styles.like}>
-                    <image></image>
-                    <h3>like</h3>
+                    <img src={like}></img>
+                    <p>Like • {1+6}</p>
                 </div>
             </div>
         </div>
