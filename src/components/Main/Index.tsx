@@ -4,6 +4,13 @@ import thaisImg from "../../assets/ThaísGomes.jpg";
 import RicardoImg from "../../assets/RicardoSiqueira.jpg";
 import Banner from "../Banner"
 
+type feedback = {
+    author: string
+    time: number
+    content: string
+    likes: number
+}
+
 type Post = {
   id: number
   image: string
@@ -12,6 +19,7 @@ type Post = {
   text1: string
   text2: string
   text3: string
+  feedbacks: feedback[]
 }
 
 export default function Main(){
@@ -23,7 +31,27 @@ export default function Main(){
             occupation: "Designer",
             text1: "Lorem ipsum ",
             text2: "dolor sit amet. Ex laboriosam dolorem non tempore earum et voluptatem suscipit ut cupiditate nisi est odit voluptates. Nam magni amet ut ipsam molestiae aut facilis minus et quia reiciendis sed excepturi rerum ex consequatur minima! Ex rerum sunt et incidunt officia et veritatis deserunt. Sit soluta laboriosam et incidunt sequi et eius fugiat est temporibus similique rem illum natus sit unde eveniet.",
-            text3: "Non quos omnis ut autem labore nam vero consequatur est porro similique ad adipisci quisquam!"
+            text3: "Non quos omnis ut autem labore nam vero consequatur est porro similique ad adipisci quisquam!",
+            feedbacks: [
+                    {
+                        author: "Felyppe Nunes",
+                        time: 1,
+                        content: "Texto Texto Texto",
+                        likes: 7
+                    },
+                    {
+                        author: "Felyppe Nunes",
+                        time: 2,
+                        content: "Texto Texto Texto",
+                        likes: 8
+                    },
+                    {
+                        author: "Felyppe Nunes",
+                        time: 8,
+                        content: "Texto Texto Texto",
+                        likes: 9
+                    }
+                    ]
         },
         {
             id: 2,
@@ -32,7 +60,13 @@ export default function Main(){
             occupation: "Dev Back-end",
             text1: "Lorem ipsum ",
             text2: "dolor sit amet. Ex laboriosam dolorem non tempore earum et voluptatem suscipit ut cupiditate nisi est odit voluptates. Nam magni amet ut ipsam molestiae aut facilis minus et quia reiciendis sed excepturi rerum ex consequatur minima! Ex rerum sunt et incidunt officia et veritatis deserunt. Sit soluta laboriosam et incidunt sequi et eius fugiat est temporibus similique rem illum natus sit unde eveniet.",
-            text3: "Non quos omnis ut autem labore nam vero consequatur est porro similique ad adipisci quisquam!"
+            text3: "Non quos omnis ut autem labore nam vero consequatur est porro similique ad adipisci quisquam!",
+            feedbacks: [{
+                        author: "Felyppe Nunes",
+                        time: 1,
+                        content: "Texto Texto Texto",
+                        likes: 7
+                    }]
         },
     ]
     return(
@@ -51,6 +85,7 @@ export default function Main(){
                     text1={post.text1}
                     text2={post.text2}
                     text3={post.text3}
+                    feedbacks={post.feedbacks}
                     />
                 )}
             </div>
