@@ -26,7 +26,7 @@ export default function Main(){
             text3: "Non quos omnis ut autem labore nam vero consequatur est porro similique ad adipisci quisquam!"
         },
         {
-            id: 1,
+            id: 2,
             image: RicardoImg,
             author: "Ricardo Siqueira",
             occupation: "Dev Back-end",
