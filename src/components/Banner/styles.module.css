@@ -1,4 +1,4 @@
-.container {
+.banner {
     width: 386px;
     height: 486px;
     border-radius: 20px;
@@ -11,7 +11,7 @@
     background-repeat: no-repeat;
 }
 
-.container figure {
+.banner figure {
     height: 115px;
     width: 115px;
     border-radius: 50%;
@@ -25,7 +25,7 @@
     top: 40%;
     left: 35%;
 }
-.container div {
+.banner div {
     background: #0E0E1B;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
@@ -37,7 +37,7 @@
     justify-content: center;
 }
 
-.container div h1{
+.banner div h1{
     font-family: Inter;
     font-weight: 400;
     font-style: Regular;
@@ -46,7 +46,7 @@
     margin: 0;
 }
 
-.container div h2{
+.banner div h2{
     font-family: Inter;
     font-weight: 400;
     font-style: Regular;
