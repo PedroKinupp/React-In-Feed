@@ -1,7 +1,13 @@
 import styles from './styles.module.css'
 import like from "../../assets/like.png"
 
-export default function Feedbacks(){
+interface Ifeedbacks{
+    author: string
+    time: number
+    content: string
+    likes: number
+}
+export default function Feedbacks({author, time, content, likes} : Ifeedbacks){
     return(
         <div className={styles.feedbacks}>
             <figure>
@@ -9,14 +15,14 @@ export default function Feedbacks(){
             <div className={styles.container}>
                 <div className={styles.content}>
                     <div>
-                        <h2>Felyppe Nunes</h2>
-                        <h3>Cerca de 2h</h3>
+                        <h2>{author}</h2>
+                        <h3>Cerca de {time}h</h3>
                     </div>
-                    <p>texto texto texto texto</p>
+                    <p>{content}</p>
                 </div>
                 <div className={styles.like}>
                     <img src={like}></img>
-                    <p>Like • {1+6}</p>
+                    <p>Like • {likes}</p>
                 </div>
             </div>
         </div>
