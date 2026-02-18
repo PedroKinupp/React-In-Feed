@@ -1,0 +1,14 @@
+.main {
+    display: flex;
+    justify-content: center;
+    margin: 30px;
+    gap: 30px;
+    font-family: Inter;
+}
+
+.comments{
+    width: 812px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
