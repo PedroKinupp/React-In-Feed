@@ -2,9 +2,11 @@ import styles from './styles.module.css'
 import CommentBox from "../CommentBox";
 import thaisImg from "../../assets/ThaísGomes.jpg";
 import RicardoImg from "../../assets/RicardoSiqueira.jpg";
+import profilepic from "../../assets/image.png"
 import Banner from "../Banner"
 
 type feedback = {
+    image: string
     author: string
     time: number
     content: string
@@ -22,8 +24,7 @@ type Post = {
   feedbacks: feedback[]
 }
 
-export default function Main(){
-    const posts: Post[] = [
+const posts: Post[] = [
         {
             id: 1,
             image: thaisImg,
@@ -34,18 +35,21 @@ export default function Main(){
             text3: "Non quos omnis ut autem labore nam vero consequatur est porro similique ad adipisci quisquam!",
             feedbacks: [
                     {
-                        author: "Felyppe Nunes",
+                        image:  profilepic,
+                        author: "Ana Paula Renault",
                         time: 1,
                         content: "Texto Texto Texto",
                         likes: 7
                     },
                     {
-                        author: "Felyppe Nunes",
+                        image: profilepic,
+                        author: "Babu Santana",
                         time: 2,
-                        content: "Texto Texto Texto",
+                        content: "dolor sit amet. Ex laboriosam dolorem non tempore earum et voluptatem suscipit ut cupiditate nisi est odit voluptates. Nam magni amet ut ipsam molestiae aut facilis minus et quia reiciendis sed excepturi rerum ex",
                         likes: 8
                     },
                     {
+                        image: profilepic,
                         author: "Felyppe Nunes",
                         time: 8,
                         content: "Texto Texto Texto",
@@ -62,13 +66,16 @@ export default function Main(){
             text2: "dolor sit amet. Ex laboriosam dolorem non tempore earum et voluptatem suscipit ut cupiditate nisi est odit voluptates. Nam magni amet ut ipsam molestiae aut facilis minus et quia reiciendis sed excepturi rerum ex consequatur minima! Ex rerum sunt et incidunt officia et veritatis deserunt. Sit soluta laboriosam et incidunt sequi et eius fugiat est temporibus similique rem illum natus sit unde eveniet.",
             text3: "Non quos omnis ut autem labore nam vero consequatur est porro similique ad adipisci quisquam!",
             feedbacks: [{
-                        author: "Felyppe Nunes",
+                        image: thaisImg,
+                        author: "Thaís Gomes",
                         time: 1,
                         content: "Texto Texto Texto",
                         likes: 7
                     }]
         },
     ]
+
+export default function Main(){
     return(
         <main className={styles.main}>
 
