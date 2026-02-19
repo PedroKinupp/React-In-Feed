@@ -1,5 +1,5 @@
 import styles from './styles.module.css'
-import like from "../../assets/like.png"
+import LikeButton from '../Like'
 
 interface Ifeedbacks{
     image: string
@@ -22,10 +22,7 @@ export default function Feedbacks({image, author, time, content, likes} : Ifeedb
                     </div>
                     <p>{content}</p>
                 </div>
-                <div className={styles.like}>
-                    <img src={like}></img>
-                    <p>Like • {likes}</p>
-                </div>
+                <LikeButton likes={likes}/>
             </div>
         </div>
     )

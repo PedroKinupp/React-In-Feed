@@ -61,25 +61,3 @@
     margin: 0;
     color: #FFFFFF;
 }
-
-.like{
-    display: flex;
-    justify-content: flex-start !important;
-    gap: 10px;
-}
-
-.like img{
-    height: 15px;
-    width: 15px;
-    object-fit: contain;
-    object-position: center top;
-}
-
-.like p{
-    font-family: Inter;
-    font-weight: 700;
-    font-style: Bold;
-    font-size: 14px;
-    color: #DDDDDD;
-    margin: 0;
-}
