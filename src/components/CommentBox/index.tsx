@@ -3,6 +3,7 @@ import CommentButton from '../CommentButton/index.tsx'
 import Feedbacks from '../Feedbacks/index.tsx';
 
 type feedback = {
+    image: string
     author: string
     time: number
     content: string
@@ -22,7 +23,7 @@ interface ICommentBoxProps{
 export default function CommentBox(props: ICommentBoxProps){
     return(
         <div className={styles.container}>
-            <div>
+            <div className={styles.head}>
                 <div className={styles.profile}>
                     <figure>
                         <img src={props.image} className={styles.profileimage}></img>
@@ -46,6 +47,7 @@ export default function CommentBox(props: ICommentBoxProps){
             </form>
             {props.feedbacks.map((feedback) =>
                 <Feedbacks 
+                    image={feedback.image}
                     author={feedback.author} 
                     content={feedback.content}
                     likes={feedback.likes}
