@@ -25,22 +25,25 @@ interface ICommentBoxProps{
 export default function CommentBox(props: ICommentBoxProps){
     const [fb, setFb] = useState(props.feedbacks || [])
 
-    function handleComment(){
+    function handleComment(text : string){
 
         const newFeedback = {
                 key: 9,
                 image: Picture,
                 author: "Eu",
                 time: 0,
-                content: "string",
+                content: text,
                 likes: 0,
             }
 
         setFb(prevFb => [newFeedback, ...prevFb])
     }
 
+    const [fbtext, setFbText] = useState('')
+
     return(
         <div className={styles.container}>
+
             <div className={styles.head}>
                 <div className={styles.profile}>
                     <figure>
@@ -53,18 +56,23 @@ export default function CommentBox(props: ICommentBoxProps){
                 </div>
                 <h3>Publicado há {props.time}h</h3>
             </div>
+
             <section className={styles.info}>
                 <p>{props.text1}</p>
                 <p>{props.text2}</p>
                 <p>{props.text3}</p>
             </section>
+
             <form className={styles.forms}>
                 <h4>Deixe seu Feedback</h4>
-                <textarea className={styles.textarea}></textarea>
+                <textarea 
+                    className={styles.textarea} 
+                    value={fbtext}
+                    onChange={(e) => setFbText(e.target.value)}/>
                 <button 
                     className={styles.button}
                     type='button'
-                    onClick={handleComment}
+                    onClick={() => handleComment(fbtext)}
                     >
                     Comentar
                 </button>
