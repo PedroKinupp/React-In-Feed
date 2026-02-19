@@ -2,15 +2,17 @@ import styles from './styles.module.css'
 import like from "../../assets/like.png"
 
 interface Ifeedbacks{
+    image: string
     author: string
     time: number
     content: string
     likes: number
 }
-export default function Feedbacks({author, time, content, likes} : Ifeedbacks){
+export default function Feedbacks({image, author, time, content, likes} : Ifeedbacks){
     return(
         <div className={styles.feedbacks}>
             <figure>
+                <img src={image}/>
             </figure>
             <div className={styles.container}>
                 <div className={styles.content}>
