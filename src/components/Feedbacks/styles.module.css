@@ -1,26 +1,28 @@
 .feedbacks{
     margin: 0;
     padding: 0;
+    justify-content: flex-start;
+    gap: 25px;
 }
 
 .feedbacks figure{
-    height: 85px;
-    width: 85px;
     margin: 0;
-    background-image: url("../../assets/foto_perfil.png");
-    background-size: cover;
-    background-position: top;
-    background-repeat: no-repeat;
+}
+.feedbacks figure img{
+    height: 75px;
+    width: 75px;
+    object-fit: cover;
     border-radius: 50%;
 }
 
 .container{
     flex-direction: column;
     gap: 10px;
+    width: 80%;
 }
 
 .content{
-    width: 580px;
+    width: 100%;
     background-color: rgb(21, 21, 46);
     padding: 11px 20px 20px;
     border-radius: 8px;
@@ -31,7 +33,8 @@
 
 .content div{
     align-items: flex-start;
-    gap: 5px;
+    justify-content: space-between;
+    gap: 60px;
 }
 
 .content div h2{
@@ -68,6 +71,8 @@
 .like img{
     height: 15px;
     width: 15px;
+    object-fit: contain;
+    object-position: center top;
 }
 
 .like p{
