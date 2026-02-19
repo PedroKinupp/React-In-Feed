@@ -2,10 +2,13 @@ import styles from './styles.module.css'
 import CommentBox from "../CommentBox";
 import thaisImg from "../../assets/ThaísGomes.jpg";
 import RicardoImg from "../../assets/RicardoSiqueira.jpg";
-import profilepic from "../../assets/image.png"
+import FelyppeImg from "../../assets/FelyppeImg.jpg";
+import JessyImg from "../../assets/JessyImg.jpg";
+import AnaPaulaImg from "../../assets/AnaPaulaImg.jpg";
 import Banner from "../Banner"
 
 type feedback = {
+    key: number
     image: string
     author: string
     time: number
@@ -14,7 +17,7 @@ type feedback = {
 }
 
 type Post = {
-  id: number
+  key: number
   image: string
   author: string
   occupation: string
@@ -26,7 +29,7 @@ type Post = {
 
 const posts: Post[] = [
         {
-            id: 1,
+            key: 1,
             image: thaisImg,
             author: "Thaís Gomes",
             occupation: "Designer",
@@ -35,30 +38,33 @@ const posts: Post[] = [
             text3: "Non quos omnis ut autem labore nam vero consequatur est porro similique ad adipisci quisquam!",
             feedbacks: [
                     {
-                        image:  profilepic,
+                        key: 1,
+                        image:  AnaPaulaImg,
                         author: "Ana Paula Renault",
                         time: 1,
-                        content: "Texto Texto Texto",
+                        content: "Est aspernatur quis eos natus dicta et internos",
                         likes: 7
                     },
                     {
-                        image: profilepic,
+                        key: 2,
+                        image: JessyImg,
                         author: "Babu Santana",
                         time: 2,
                         content: "dolor sit amet. Ex laboriosam dolorem non tempore earum et voluptatem suscipit ut cupiditate nisi est odit voluptates. Nam magni amet ut ipsam molestiae aut facilis minus et quia reiciendis sed excepturi rerum ex",
                         likes: 8
                     },
                     {
-                        image: profilepic,
+                        key: 3,
+                        image: FelyppeImg,
                         author: "Felyppe Nunes",
                         time: 8,
-                        content: "Texto Texto Texto",
+                        content: "Est aspernatur quis eos natus dicta et internos",
                         likes: 9
                     }
                     ]
         },
         {
-            id: 2,
+            key: 2,
             image: RicardoImg,
             author: "Ricardo Siqueira",
             occupation: "Dev Back-end",
@@ -66,10 +72,11 @@ const posts: Post[] = [
             text2: "dolor sit amet. Ex laboriosam dolorem non tempore earum et voluptatem suscipit ut cupiditate nisi est odit voluptates. Nam magni amet ut ipsam molestiae aut facilis minus et quia reiciendis sed excepturi rerum ex consequatur minima! Ex rerum sunt et incidunt officia et veritatis deserunt. Sit soluta laboriosam et incidunt sequi et eius fugiat est temporibus similique rem illum natus sit unde eveniet.",
             text3: "Non quos omnis ut autem labore nam vero consequatur est porro similique ad adipisci quisquam!",
             feedbacks: [{
+                        key: 1,
                         image: thaisImg,
                         author: "Thaís Gomes",
                         time: 1,
-                        content: "Texto Texto Texto",
+                        content: "Est aspernatur quis eos natus dicta et internos",
                         likes: 7
                     }]
         },
@@ -84,7 +91,7 @@ export default function Main(){
             <div className={styles.comments}>
                 {posts.map(post =>
                     <CommentBox
-                    key={post.id}
+                    key={post.key}
                     image={post.image}
                     name={post.author}
                     occupation={post.occupation}
