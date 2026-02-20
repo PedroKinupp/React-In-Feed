@@ -34,7 +34,11 @@
 .content div{
     align-items: flex-start;
     justify-content: space-between;
-    gap: 60px;
+    gap: 5px;
+}
+
+.head{
+    flex-direction: column; 
 }
 
 .content div h2{
@@ -60,4 +64,18 @@
     font-size: 14px;
     margin: 0;
     color: #FFFFFF;
+}
+
+.delete{
+    border: none;
+    padding: 0;
+    height: 24px;
+    width: 24px;
+    background-color: rgb(21, 21, 46);
+    cursor: pointer;
+}
+
+.delete img{
+    height: 24px;
+    width: 24px;
 }

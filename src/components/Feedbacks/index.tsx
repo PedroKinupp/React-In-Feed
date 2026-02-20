@@ -1,5 +1,6 @@
 import styles from './styles.module.css'
 import LikeButton from '../Like'
+import trashIcon from '../../assets/trashIcon.png'
 
 interface Ifeedbacks{
     key: number
@@ -18,8 +19,11 @@ export default function Feedbacks(props : Ifeedbacks){
             <div className={styles.container}>
                 <div className={styles.content}>
                     <div>
-                        <h2>{props.author}</h2>
-                        <h3>Cerca de {props.time}h</h3>
+                        <div className={styles.head}>
+                            <h2>{props.author}</h2>
+                            <h3>Cerca de {props.time}h</h3>
+                        </div>
+                        <button className={styles.delete}><img src={trashIcon}/></button>  
                     </div>
                     <p>{props.content}</p>
                 </div>
