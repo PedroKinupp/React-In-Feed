@@ -2,15 +2,29 @@ import styles from './styles.module.css'
 import LikeButton from '../Like'
 import trashIcon from '../../assets/trashIcon.png'
 
-interface Ifeedbacks{
-    key: number
+type feedback = {
+    id: number
     image: string
     author: string
     time: number
     content: string
     likes: number
 }
+interface Ifeedbacks{
+    id: number
+    image: string
+    author: string
+    time: number
+    content: string
+    likes: number
+    fb: feedback[]
+    setFb: (fb: feedback[]) => void
+}
 export default function Feedbacks(props : Ifeedbacks){
+    function handleDelete(){
+            props.setFb(props.fb.filter(item => item.id !== props.id))
+    }
+
     return(
         <div className={styles.feedbacks}>
             <figure>
@@ -23,7 +37,12 @@ export default function Feedbacks(props : Ifeedbacks){
                             <h2>{props.author}</h2>
                             <h3>Cerca de {props.time}h</h3>
                         </div>
-                        <button className={styles.delete}><img src={trashIcon}/></button>  
+                        <button 
+                            className={styles.delete}
+                            onClick={handleDelete}
+                            >
+                                <img src={trashIcon}/>
+                        </button>  
                     </div>
                     <p>{props.content}</p>
                 </div>

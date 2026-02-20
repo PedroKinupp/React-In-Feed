@@ -60,14 +60,17 @@ export default function CommentBox(props: ICommentBoxProps){
                 <CommentButton fb={feedback} setFb={setFeedback} fbText={feedbacktext}/>
             </form>
 
-            {feedback.map((feedback) =>
+            {feedback.map((fb) =>
                 <Feedbacks 
-                    key={feedback.id}
-                    image={feedback.image}
-                    author={feedback.author} 
-                    content={feedback.content}
-                    likes={feedback.likes}
-                    time={feedback.time}
+                    key={fb.id}
+                    id={fb.id}
+                    image={fb.image}
+                    author={fb.author} 
+                    content={fb.content}
+                    likes={fb.likes}
+                    time={fb.time}
+                    fb={feedback}
+                    setFb={setFeedback}
                 />
             )}
         </div>
