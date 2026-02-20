@@ -1,10 +1,10 @@
 import styles from './styles.module.css'
 import Feedbacks from '../Feedbacks/index.tsx';
-import Picture from '../../assets/image.png'
+import CommentButton from '../CommentButton'
 import { useState } from 'react';
 
 type feedback = {
-    key: number
+    id: number
     image: string
     author: string
     time: number
@@ -23,23 +23,8 @@ interface ICommentBoxProps{
 }
 
 export default function CommentBox(props: ICommentBoxProps){
-    const [fb, setFb] = useState(props.feedbacks || [])
-
-    function handleComment(text : string){
-
-        const newFeedback = {
-                key: 9,
-                image: Picture,
-                author: "Eu",
-                time: 0,
-                content: text,
-                likes: 0,
-            }
-
-        setFb(prevFb => [newFeedback, ...prevFb])
-    }
-
-    const [fbtext, setFbText] = useState('')
+    const [feedback, setFeedback] = useState(props.feedbacks || [])
+    const [feedbacktext, setFeedbackText] = useState('')
 
     return(
         <div className={styles.container}>
@@ -65,22 +50,19 @@ export default function CommentBox(props: ICommentBoxProps){
 
             <form className={styles.forms}>
                 <h4>Deixe seu Feedback</h4>
+
                 <textarea 
                     className={styles.textarea} 
-                    value={fbtext}
-                    onChange={(e) => setFbText(e.target.value)}/>
-                <button 
-                    className={styles.button}
-                    type='button'
-                    onClick={() => handleComment(fbtext)}
-                    >
-                    Comentar
-                </button>
+                    value={feedbacktext}
+                    onChange={(e) => setFeedbackText(e.target.value)}>
+                </textarea>
+
+                <CommentButton fb={feedback} setFb={setFeedback} fbText={feedbacktext}/>
             </form>
 
-            {fb.map((feedback) =>
+            {feedback.map((feedback) =>
                 <Feedbacks 
-                    key={feedback.key}
+                    key={feedback.id}
                     image={feedback.image}
                     author={feedback.author} 
                     content={feedback.content}
