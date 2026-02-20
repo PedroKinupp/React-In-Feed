@@ -2,6 +2,7 @@ import styles from './styles.module.css'
 import Feedbacks from '../Feedbacks/index.tsx';
 import CommentButton from '../CommentButton'
 import { useState } from 'react';
+import Picture from '../../assets/image.png'
 
 type feedback = {
     id: number
@@ -25,6 +26,20 @@ interface ICommentBoxProps{
 export default function CommentBox(props: ICommentBoxProps){
     const [feedback, setFeedback] = useState(props.feedbacks || [])
     const [feedbacktext, setFeedbackText] = useState('')
+
+    function handleComment(text : string){
+        const newFeedback = {
+                id: Math.floor(Math.random() * 1000),
+                image: Picture,
+                author: "Eu",
+                time: 0,
+                content: text,
+                likes: 0,
+            }
+
+        setFeedback([newFeedback, ...feedback])
+        setFeedbackText("")
+    }
 
     return(
         <div className={styles.container}>
@@ -57,7 +72,7 @@ export default function CommentBox(props: ICommentBoxProps){
                     onChange={(e) => setFeedbackText(e.target.value)}>
                 </textarea>
 
-                <CommentButton fb={feedback} setFb={setFeedback} fbText={feedbacktext}/>
+                <CommentButton onComment={handleComment} fbText={feedbacktext}/>
             </form>
 
             {feedback.map((fb) =>
