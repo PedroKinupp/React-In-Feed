@@ -18,7 +18,7 @@ interface IFeedbackProps{
 export default function CommentBox(props : IFeedbackProps){
     function handleComment(text : string){
         const newFeedback = {
-                key: 9,
+                key: Math.floor(Math.random() * 1000),
                 image: Picture,
                 author: "Eu",
                 time: 0,
