@@ -8,7 +8,7 @@ import AnaPaulaImg from "../../assets/AnaPaulaImg.jpg";
 import Banner from "../Banner"
 
 type feedback = {
-    key: number
+    id: number
     image: string
     author: string
     time: number
@@ -17,7 +17,7 @@ type feedback = {
 }
 
 type Post = {
-  key: number
+  id: number
   image: string
   author: string
   occupation: string
@@ -29,7 +29,7 @@ type Post = {
 
 const posts: Post[] = [
         {
-            key: 1,
+            id: 1,
             image: thaisImg,
             author: "Thaís Gomes",
             occupation: "Designer",
@@ -38,7 +38,7 @@ const posts: Post[] = [
             text3: "Non quos omnis ut autem labore nam vero consequatur est porro similique ad adipisci quisquam!",
             feedbacks: [
                     {
-                        key: 1,
+                        id: 1,
                         image:  AnaPaulaImg,
                         author: "Ana Paula Renault",
                         time: 1,
@@ -46,7 +46,7 @@ const posts: Post[] = [
                         likes: 7
                     },
                     {
-                        key: 2,
+                        id: 2,
                         image: JessyImg,
                         author: "Babu Santana",
                         time: 2,
@@ -54,7 +54,7 @@ const posts: Post[] = [
                         likes: 8
                     },
                     {
-                        key: 3,
+                        id: 3,
                         image: FelyppeImg,
                         author: "Felyppe Nunes",
                         time: 8,
@@ -64,7 +64,7 @@ const posts: Post[] = [
                     ]
         },
         {
-            key: 2,
+            id: 2,
             image: RicardoImg,
             author: "Ricardo Siqueira",
             occupation: "Dev Back-end",
@@ -72,7 +72,7 @@ const posts: Post[] = [
             text2: "dolor sit amet. Ex laboriosam dolorem non tempore earum et voluptatem suscipit ut cupiditate nisi est odit voluptates. Nam magni amet ut ipsam molestiae aut facilis minus et quia reiciendis sed excepturi rerum ex consequatur minima! Ex rerum sunt et incidunt officia et veritatis deserunt. Sit soluta laboriosam et incidunt sequi et eius fugiat est temporibus similique rem illum natus sit unde eveniet.",
             text3: "Non quos omnis ut autem labore nam vero consequatur est porro similique ad adipisci quisquam!",
             feedbacks: [{
-                        key: 1,
+                        id: 1,
                         image: thaisImg,
                         author: "Thaís Gomes",
                         time: 1,
@@ -91,7 +91,7 @@ export default function Main(){
             <div className={styles.comments}>
                 {posts.map(post =>
                     <CommentBox
-                    key={post.key}
+                    key={post.id}
                     image={post.image}
                     name={post.author}
                     occupation={post.occupation}
